@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://hfash0opmbnd"]
+
+[ext_resource type="Script" path="res://UI/buff_panel_container.gd" id="1_f6jbs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aklos"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="BuffPanelContainer" type="PanelContainer"]
+offset_right = 96.0
+offset_bottom = 96.0
+tooltip_text = "a"
+theme_override_styles/panel = SubResource("StyleBoxFlat_aklos")
+script = ExtResource("1_f6jbs")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5

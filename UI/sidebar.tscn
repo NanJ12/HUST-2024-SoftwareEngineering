@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwb15j7b2b34t"]
+
+[sub_resource type="GDScript" id="GDScript_u8hbo"]
+script/source = "#--------------------------------------
+#
+#
+#
+#--------------------------------------
+@tool
+class_name Sidebar extends Control
+
+# TODO 侧边栏 ===============>信 号<===============
+#region 信号
+
+#endregion
+
+# TODO 侧边栏 ===============>常 量<===============
+#region 常量
+
+#endregion
+
+# TODO 侧边栏 ===============>变 量<===============
+#region 变量
+# 这个UI加载完毕后的位置
+var current_pos : Vector2
+#endregion
+
+# TODO 侧边栏 ===============>虚方法<===============
+#region 常用的虚方法
+func _init() -> void:
+	# 侧边栏：修改聚焦模式为无
+	focus_mode = FocusMode.FOCUS_NONE
+
+func _ready() -> void:
+	# 侧边栏：设置轴心为中心
+	pivot_offset = size / 2
+
+func _exit_tree() -> void:
+	pass
+#endregion
+
+# TODO 侧边栏 ===============>信号链接方法<===============
+#region 信号链接方法
+
+#endregion
+
+# TODO 侧边栏 ===============>工具方法<===============
+#region 工具方法
+
+#endregion
+"
+
+[node name="Sidebar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+script = SubResource("GDScript_u8hbo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbundantBuff" load_steps=4 format=3 uid="uid://bpcr7kfin0xgo"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/abundant_buff.gd" id="1_w6fqh"]
+[ext_resource type="Texture2D" uid="uid://5kboe8bhlb27" path="res://assets/icon/充沛.png" id="1_wg880"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftd1w"]
+atlas = ExtResource("1_wg880")
+
+[resource]
+script = ExtResource("1_w6fqh")
+buff_name = "充沛I"
+buff_level = 1
+buff_desc = "百分比增加体力上限"
+buff_texture = SubResource("AtlasTexture_ftd1w")

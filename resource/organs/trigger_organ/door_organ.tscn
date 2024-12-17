@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvpqnjpqj3ig1"]
+
+[ext_resource type="Script" path="res://resource/organs/trigger_organ/door_organ.gd" id="1_tdunt"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="1_tohg3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tttye"]
+atlas = ExtResource("1_tohg3")
+region = Rect2(144, 48, 48, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bxcr"]
+size = Vector2(31, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hg1a"]
+size = Vector2(23, 94)
+
+[node name="DoorOrgan" type="CharacterBody2D"]
+position = Vector2(0, -24)
+collision_layer = 48
+script = ExtResource("1_tdunt")
+organ_name = "门"
+organ_desc = "会定时落下的门，落下后不打开"
+organ_texture = SubResource("AtlasTexture_tttye")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tohg3")
+region_enabled = true
+region_rect = Rect2(144, 48, 48, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_0bxcr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 95)
+shape = SubResource("RectangleShape2D_4hg1a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

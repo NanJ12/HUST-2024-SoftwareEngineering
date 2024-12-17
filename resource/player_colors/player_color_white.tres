@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PlayerColorWhite" load_steps=4 format=3 uid="uid://cqhj0pt3qd3n6"]
+
+[ext_resource type="Script" path="res://scripts/other_class/player_color/player_color_white.gd" id="1_72xkj"]
+
+[sub_resource type="Gradient" id="Gradient_22e1j"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_88mam"]
+gradient = SubResource("Gradient_22e1j")
+
+[resource]
+script = ExtResource("1_72xkj")
+player_color_name = "白色"
+color = Color(1, 1, 1, 1)
+player_color_desc = "玩家的初始颜色..."
+player_color_texture = SubResource("GradientTexture2D_88mam")

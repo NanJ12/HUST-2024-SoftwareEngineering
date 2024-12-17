@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://wlb8jey6npwe"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/rolling_stones_organ.gd" id="1_eg6xp"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_y6vt0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yhp4"]
+atlas = ExtResource("2_y6vt0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sc16h"]
+radius = 23.0217
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1pa4"]
+radius = 25.0
+
+[node name="RollingStonesOrgan" type="CharacterBody2D"]
+collision_layer = 48
+collision_mask = 17
+floor_stop_on_slope = false
+floor_constant_speed = true
+script = ExtResource("1_eg6xp")
+speed = 200.0
+organ_name = "滚石机关"
+organ_desc = "会向下落下，并在落地后滚动，被撞到会破裂
+"
+organ_texture = SubResource("AtlasTexture_7yhp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y6vt0")
+region_enabled = true
+region_rect = Rect2(48, 0, 48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sc16h")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_k1pa4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

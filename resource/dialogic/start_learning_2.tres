@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://dqqnabglb61ut"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_qt0i5"]
+
+[resource]
+script = ExtResource("1_qt0i5")
+sentences = Array[String](["Ghost：飘过去，小心地刺！", "（可以在空中长按空格进行漂浮）", "Tip：“跳跃+漂浮”"])

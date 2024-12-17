@@ -1,0 +1,118 @@
+[gd_scene load_steps=13 format=3 uid="uid://5m2i2sbd0n2u"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/crystal_altar_organ.gd" id="1_waee0"]
+[ext_resource type="Texture2D" uid="uid://dg5md4c82vqc0" path="res://assets/tile/水晶.png" id="2_7jmxk"]
+[ext_resource type="Shader" path="res://shaders/hight_light.gdshader" id="3_p0iku"]
+[ext_resource type="Script" path="res://scripts/tool/deer_polygon.gd" id="4_01d27"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_308ne"]
+shader = ExtResource("3_p0iku")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.1
+shader_parameter/shine_angle = 45.0
+shader_parameter/is_up_and_down = true
+shader_parameter/amplitude = 32.0
+shader_parameter/speed = 0.75
+
+[sub_resource type="Gradient" id="Gradient_xr6vr"]
+offsets = PackedFloat32Array(0, 0.566667)
+colors = PackedColorArray(4.81307e-07, 0.603741, 0.67183, 0.588235, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sq7p2"]
+gradient = SubResource("Gradient_xr6vr")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0kixb"]
+gradient = SubResource("Gradient_xr6vr")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j37v5"]
+size = Vector2(65, 36.375)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kd8wq"]
+radius = 256.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aklos"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_q72vl"]
+font_size = 24
+
+[node name="CyanCrystalAltarOrgan" type="CharacterBody2D"]
+position = Vector2(24, -24)
+collision_layer = 48
+script = ExtResource("1_waee0")
+organ_name = "青色水晶"
+organ_desc = "玩家进入水晶范围可以恢复光源、玩家可以与水晶交互来添加传送点\\
+玩家进入水晶范围可以快速恢复体力"
+organ_texture = ExtResource("2_7jmxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7jmxk")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="Light" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_308ne")
+position = Vector2(0, -24)
+texture = SubResource("GradientTexture2D_sq7p2")
+texture_offset = Vector2(64, 64)
+texture_scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(36, 0, 34.7733, 9.31749, 31.1769, 18, 25.4558, 25.4558, 18, 31.1769, 9.31749, 34.7733, 2.20429e-15, 36, -9.31749, 34.7733, -18, 31.1769, -25.4558, 25.4558, -31.1769, 18, -34.7733, 9.31749, -36, 4.40858e-15, -34.7733, -9.31749, -31.1769, -18, -25.4558, -25.4558, -18, -31.1769, -9.31749, -34.7733, -6.61287e-15, -36, 9.31749, -34.7733, 18, -31.1769, 25.4558, -25.4558, 31.1769, -18, 34.7733, -9.31749)
+script = ExtResource("4_01d27")
+polygon_edge = 24
+polygon_length = 36.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+energy = 0.5
+texture = SubResource("GradientTexture2D_0kixb")
+texture_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29.1875)
+shape = SubResource("RectangleShape2D_j37v5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kd8wq")
+
+[node name="FTipPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 64)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -130.0
+offset_right = 100.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aklos")
+
+[node name="Label" type="Label" parent="FTipPanelContainer"]
+layout_mode = 2
+text = "按下F进行存档"
+label_settings = SubResource("LabelSettings_q72vl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

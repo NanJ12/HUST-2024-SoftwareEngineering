@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://cvox3gmb5umpx"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_wgdft"]
+
+[resource]
+script = ExtResource("1_wgdft")
+sentences = Array[String](["Orange：你好！", "Lumine：你好，你是谁？
+", "Orange：我是一个冒险者，我正在攀登这座山峰", "Lumine：我在寻找一个答案，不过我也要去到山顶", "Orange：那不如我们一起吧", "Lumine：好啊"])

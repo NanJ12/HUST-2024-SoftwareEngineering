@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://ckwcj65dgem4"]
+
+[ext_resource type="AudioStream" uid="uid://debp0df86giww" path="res://assets/audios/e_A_1.ogg" id="1_dvhld"]
+[ext_resource type="Resource" uid="uid://cfeekdqr7vdqr" path="res://resource/buffs/abundant_buff_II.tres" id="2_jbqlu"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_y3v1t"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="4_c2jie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dod0"]
+atlas = ExtResource("3_y3v1t")
+region = Rect2(0, 384, 96, 96)
+
+[resource]
+script = ExtResource("4_c2jie")
+cd_name = "电子A-1"
+cd_audio = ExtResource("1_dvhld")
+cd_texture = SubResource("AtlasTexture_3dod0")
+cd_desc = "装配可获得强电I的Buff
+强电：百分比增加激光强度
+"
+cd_buff = ExtResource("2_jbqlu")

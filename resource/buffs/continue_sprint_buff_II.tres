@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ContinueSprintBuff" load_steps=4 format=3 uid="uid://do6jnj4plgbv4"]
+
+[ext_resource type="Texture2D" uid="uid://dmhlgwrws16lf" path="res://assets/icon/连冲.png" id="1_aymgb"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/continue_sprint_buff.gd" id="2_x8k0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6xjh"]
+atlas = ExtResource("1_aymgb")
+
+[resource]
+script = ExtResource("2_x8k0w")
+buff_name = "连冲II"
+buff_level = 2
+buff_desc = "百分比减少冲刺CD"
+buff_texture = SubResource("AtlasTexture_p6xjh")

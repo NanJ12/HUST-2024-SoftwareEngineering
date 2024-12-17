@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://rcbs5sotcnqj"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_wgdft"]
+
+[resource]
+script = ExtResource("1_wgdft")
+sentences = Array[String](["Lumine：走吧，天空就在那儿了。", "Orange：我就不了，鲁米娜。", "Lumine：什……什么？", "Orange：我的旅途就到这里了，鲁米娜，再见了。", "Lumine：为什么！你难道不想知道天空上是什么吗？", "Lumine：你都已经走到这里了！", "Orange：是啊，我已经走到这里了——我毕生所求的顶点。", "Orange：我的心愿已经实现了，哪怕下一刻死去也不在乎了。", "Orange：至于天空，天空只是天空而已，于我而言。", "Lumine：你……", "Orange：再见吧，鲁米娜。", "Orange：你的旅途还在上面，不是吗？", "Lumine：……", "Lumine：……再见。", "Orange：再见，希望你可以找到你想要的答案。", "Orange：然后……也告诉我吧。", "Orange：天空上……到底是什么？"])

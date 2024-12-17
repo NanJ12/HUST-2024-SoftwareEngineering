@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://dfrrg0ugk2y0l"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_dwqtm"]
+
+[resource]
+script = ExtResource("1_dwqtm")
+sentences = Array[String](["Ghost：你好。", "Lumine：你是在跟我说话吗?
+", "Ghost：是的。", "Lumine：你是谁？我这是在哪儿？", "Ghost：······往左边走。", "Lumine：喂！"])

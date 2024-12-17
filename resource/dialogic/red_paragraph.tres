@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogicParagraph" load_steps=5 format=3 uid="uid://ds5sy7xu1p1yo"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_6ktwx"]
+[ext_resource type="Resource" uid="uid://t5vw7ra3yysb" path="res://resource/dialogic/red_0.tres" id="2_gijbi"]
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_paragraph.gd" id="3_0m2g4"]
+[ext_resource type="Resource" uid="uid://cfsiuevxp3abi" path="res://resource/dialogic/red_1.tres" id="3_5jlqj"]
+
+[resource]
+script = ExtResource("3_0m2g4")
+paragraph_name = "第一段"
+index = 0
+contexts = Array[ExtResource("1_6ktwx")]([ExtResource("2_gijbi"), ExtResource("3_5jlqj")])

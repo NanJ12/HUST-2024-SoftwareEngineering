@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SprintBuff" load_steps=4 format=3 uid="uid://cq3xh8jyh26f2"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/sprint_buff.gd" id="1_3wd14"]
+[ext_resource type="Texture2D" uid="uid://d4l3b5b3k37xv" path="res://assets/icon/远冲.png" id="1_7buym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puxuy"]
+atlas = ExtResource("1_7buym")
+
+[resource]
+script = ExtResource("1_3wd14")
+buff_name = "远冲I"
+buff_level = 1
+buff_desc = "百分比增加冲刺距离"
+buff_texture = SubResource("AtlasTexture_puxuy")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dblfqc6e5yg71"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/no_gravity_organ.gd" id="1_jif1i"]
+
+[sub_resource type="Gradient" id="Gradient_blx1l"]
+colors = PackedColorArray(0.784314, 0.431373, 0, 0.470588, 0.784314, 0.431373, 0, 0.470588)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tfn4m"]
+gradient = SubResource("Gradient_blx1l")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc513"]
+size = Vector2(64, 64)
+
+[node name="NoGravityOrgan" type="CharacterBody2D"]
+collision_layer = 32
+script = ExtResource("1_jif1i")
+organ_name = "重力限制器"
+organ_desc = "玩家在该区域无法跳跃"
+organ_texture = SubResource("GradientTexture2D_tfn4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_tfn4m")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mc513")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

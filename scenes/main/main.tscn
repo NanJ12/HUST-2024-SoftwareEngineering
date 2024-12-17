@@ -1,0 +1,515 @@
+[gd_scene load_steps=23 format=3 uid="uid://b26c6c3t1bt2h"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_2q1ql"]
+[ext_resource type="Script" path="res://scenes/main/main_panel_container.gd" id="1_d7bqm"]
+[ext_resource type="Script" path="res://UI/game_button.gd" id="1_xledc"]
+[ext_resource type="Texture2D" uid="uid://cd0qo1wapo34w" path="res://assets/bg_and_fg/天空.png" id="4_qfwl7"]
+[ext_resource type="Texture2D" uid="uid://di28ww5vog6bk" path="res://assets/ui/Group 1.png" id="4_s3ksv"]
+[ext_resource type="Texture2D" uid="uid://nc2mb1jlmjki" path="res://assets/ui/title.png" id="4_yo65o"]
+[ext_resource type="Texture2D" uid="uid://f3iumvvxfq7f" path="res://assets/bg_and_fg/房子1.png" id="5_yhukl"]
+[ext_resource type="Texture2D" uid="uid://dl7drxjna8iqp" path="res://assets/bg_and_fg/房子2.png" id="6_tvciw"]
+[ext_resource type="Texture2D" uid="uid://bebubsbvqx7f1" path="res://assets/bg_and_fg/房子3.png" id="7_2e2jf"]
+[ext_resource type="Texture2D" uid="uid://62eq0kmsm47q" path="res://assets/bg_and_fg/云朵1.png" id="8_i1qwf"]
+[ext_resource type="Texture2D" uid="uid://bq7d8stys7y3l" path="res://assets/bg_and_fg/云朵2.png" id="9_iqonm"]
+[ext_resource type="Texture2D" uid="uid://c4qie8efxkom2" path="res://assets/bg_and_fg/建筑1.png" id="10_tqk6e"]
+[ext_resource type="Texture2D" uid="uid://dgt40tir281nr" path="res://assets/bg_and_fg/建筑2.png" id="11_xq8d1"]
+[ext_resource type="Texture2D" uid="uid://bda3gtlygb7l4" path="res://assets/bg_and_fg/建筑3.png" id="12_pwrnu"]
+[ext_resource type="PackedScene" uid="uid://wxbahbmde1cc" path="res://UI/setting_panel_container.tscn" id="15_20sa1"]
+[ext_resource type="Script" path="res://scenes/main/thanks_panel_container.gd" id="16_1rgaj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqy0r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6ygr"]
+texture = ExtResource("4_s3ksv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5d20"]
+bg_color = Color(0.584314, 0.545098, 0.411765, 0.588235)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.8, 0.8, 0.588235)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 16
+shadow_offset = Vector2(8, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_reukw"]
+font_size = 64
+font_color = Color(0.584314, 0.545098, 0.411765, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(8, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c87ly"]
+font_size = 48
+font_color = Color(0.782623, 0.746441, 0.622594, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vaent"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+outline_color = Color(0.784314, 0.772549, 0.698039, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2q1ql")
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="MainPanelContainer" type="PanelContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_nqy0r")
+script = ExtResource("1_d7bqm")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MainPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainPanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("4_yo65o")
+
+[node name="Control" type="Control" parent="UI/MainPanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/MainPanelContainer/MarginContainer/Control"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -524.0
+offset_right = 200.0
+offset_bottom = 524.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_l6ygr")
+
+[node name="MainButtonGroup" type="VBoxContainer" parent="UI/MainPanelContainer/MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+offset_top = 162.5
+offset_right = 600.0
+offset_bottom = 885.5
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 32
+
+[node name="StartGameButton" type="Button" parent="UI/MainPanelContainer/MarginContainer/Control/MainButtonGroup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "开始游戏"
+script = ExtResource("1_xledc")
+
+[node name="ContinueGameButton" type="Button" parent="UI/MainPanelContainer/MarginContainer/Control/MainButtonGroup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "继续游戏"
+script = ExtResource("1_xledc")
+
+[node name="SettingGameButton" type="Button" parent="UI/MainPanelContainer/MarginContainer/Control/MainButtonGroup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "游戏设置"
+script = ExtResource("1_xledc")
+
+[node name="ThanksGameButton" type="Button" parent="UI/MainPanelContainer/MarginContainer/Control/MainButtonGroup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "致谢列表
+"
+script = ExtResource("1_xledc")
+
+[node name="ExitGameButton" type="Button" parent="UI/MainPanelContainer/MarginContainer/Control/MainButtonGroup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "退出游戏"
+script = ExtResource("1_xledc")
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -100
+follow_viewport_scale = 0.001
+
+[node name="BG" type="Node2D" parent="BG"]
+position = Vector2(40, 711)
+
+[node name="Parallax2D" type="Parallax2D" parent="BG/BG"]
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="天空" type="Sprite2D" parent="BG/BG/Parallax2D"]
+position = Vector2(577, -173)
+texture = ExtResource("4_qfwl7")
+
+[node name="Parallax2D7" type="Parallax2D" parent="BG/BG"]
+scroll_scale = Vector2(1.2, 1)
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(50, 0)
+repeat_times = 3
+
+[node name="房子1" type="Sprite2D" parent="BG/BG/Parallax2D7"]
+position = Vector2(-817, -163)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_yhukl")
+
+[node name="房子2" type="Sprite2D" parent="BG/BG/Parallax2D7"]
+position = Vector2(-944, -173)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tvciw")
+
+[node name="Parallax2D8" type="Parallax2D" parent="BG/BG"]
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(36, 0)
+repeat_times = 3
+
+[node name="房子1" type="Sprite2D" parent="BG/BG/Parallax2D8"]
+position = Vector2(-1933, -2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_yhukl")
+
+[node name="房子3" type="Sprite2D" parent="BG/BG/Parallax2D8"]
+position = Vector2(-1344, -181)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2e2jf")
+
+[node name="Parallax2D5" type="Parallax2D" parent="BG/BG"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 3
+
+[node name="云朵1" type="Sprite2D" parent="BG/BG/Parallax2D5"]
+position = Vector2(340, -149)
+texture = ExtResource("8_i1qwf")
+
+[node name="Parallax2D6" type="Parallax2D" parent="BG/BG"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(16, 0)
+repeat_times = 3
+
+[node name="云朵2" type="Sprite2D" parent="BG/BG/Parallax2D6"]
+position = Vector2(1286, -344)
+texture = ExtResource("9_iqonm")
+
+[node name="Parallax2D2" type="Parallax2D" parent="BG/BG"]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(24, 0)
+repeat_times = 3
+
+[node name="建筑1" type="Sprite2D" parent="BG/BG/Parallax2D2"]
+position = Vector2(580, -184)
+texture = ExtResource("10_tqk6e")
+
+[node name="Parallax2D3" type="Parallax2D" parent="BG/BG"]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(24, 0)
+repeat_times = 3
+
+[node name="建筑2" type="Sprite2D" parent="BG/BG/Parallax2D3"]
+position = Vector2(586, -186)
+texture = ExtResource("11_xq8d1")
+
+[node name="Parallax2D4" type="Parallax2D" parent="BG/BG"]
+scroll_scale = Vector2(0.3, 1)
+scroll_offset = Vector2(-1919, 17)
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(12, 0)
+repeat_times = 3
+
+[node name="建筑3" type="Sprite2D" parent="BG/BG/Parallax2D4"]
+position = Vector2(582, -178)
+texture = ExtResource("12_pwrnu")
+
+[node name="UI_EX" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="SettingPanelContainer" parent="UI_EX" instance=ExtResource("15_20sa1")]
+
+[node name="ThanksPanelContainer" type="PanelContainer" parent="UI_EX"]
+visible = false
+custom_minimum_size = Vector2(1800, 1000)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -450.0
+offset_right = 600.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5d20")
+script = ExtResource("16_1rgaj")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_EX/ThanksPanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_EX/ThanksPanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollLabelContainer" type="ScrollContainer" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_vertical = 100
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Tile1Label" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "致谢列表"
+label_settings = SubResource("LabelSettings_reukw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "制作人"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "鹿"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label2" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "程序"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel2" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "鹿、呎八"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label3" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "音乐音效"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel3" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "鹿"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label4" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "美术"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel4" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "寒风"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label9" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "特效"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel9" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "鹿、呎八"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label5" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "文案"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel5" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "呎八"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label6" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "策划"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel6" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "鹿、呎八、寒风、阿宁"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label7" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "关卡设计"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel7" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "城市：鹿、阿宁
+高原：鹿
+雪山：鹿
+天空：鹿"
+label_settings = SubResource("LabelSettings_vaent")
+vertical_alignment = 1
+
+[node name="Tile2Label8" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "运营"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel8" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "鹿"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label10" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "特别鸣谢"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel10" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "TapTap
+小红书
+Jean François Sudre创造的SolReSol语言"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2Label11" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "参与测试的所有人"
+label_settings = SubResource("LabelSettings_c87ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParagraphLabel11" type="Label" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/ScrollLabelContainer/VBoxContainer"]
+layout_mode = 2
+text = "傲天奥特曼、不努力的猫麻麻
+不认识我、思维
+匙密奇、顾得
+狐某人、11
+胡泽宇、怪异头骨
+镜花水月、喀秋莎下千纸果
+龙、Loner
+蓝子、凝梦
+vol27、卡卡
+叁、睡dua觉
+撒哈拉沙漠海景售房中心、水一方
+TTK、天天无聊
+阿珂、昔我往矣
+萧箫nasa、余暉
+亦尘有低保、云淡风轻
+袁鹏飞@天下、star复活へzabivaka、、，
+紅茶✩Beginner✩、💶"
+label_settings = SubResource("LabelSettings_vaent")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseGameButton" type="Button" parent="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "返回"
+script = ExtResource("1_xledc")
+close_scale = true
+
+[connection signal="mouse_entered" from="UI/MainPanelContainer/MarginContainer/TextureRect" to="UI/MainPanelContainer" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="UI/MainPanelContainer/MarginContainer/TextureRect" to="UI/MainPanelContainer" method="_on_texture_rect_mouse_exited"]
+[connection signal="visibility_changed" from="UI_EX/ThanksPanelContainer" to="UI_EX/ThanksPanelContainer" method="_on_visibility_changed"]
+[connection signal="pressed" from="UI_EX/ThanksPanelContainer/MarginContainer/VBoxContainer/CloseGameButton" to="UI_EX/ThanksPanelContainer" method="_on_close_game_button_pressed"]

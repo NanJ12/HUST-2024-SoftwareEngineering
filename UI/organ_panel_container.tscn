@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ih01de8jq71"]
+
+[ext_resource type="Script" path="res://UI/organ_panel_container.gd" id="1_g4uuu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rahcm"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="OrganPanelContainer" type="PanelContainer"]
+offset_right = 121.0
+offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rahcm")
+script = ExtResource("1_g4uuu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

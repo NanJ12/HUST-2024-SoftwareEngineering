@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PlayerColorOrange" load_steps=4 format=3 uid="uid://d2dadgj6f1r2a"]
+
+[ext_resource type="Script" path="res://scripts/other_class/player_color/player_color_orange.gd" id="1_ki4nb"]
+
+[sub_resource type="Gradient" id="Gradient_5h4gu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.647059, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_66wyh"]
+gradient = SubResource("Gradient_5h4gu")
+
+[resource]
+script = ExtResource("1_ki4nb")
+player_color_name = "橙色"
+color = Color(1, 0.647059, 0, 1)
+player_color_desc = "玩家的橙色
+"
+player_color_texture = SubResource("GradientTexture2D_66wyh")

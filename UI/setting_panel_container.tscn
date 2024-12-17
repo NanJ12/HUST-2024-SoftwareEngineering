@@ -1,0 +1,216 @@
+[gd_scene load_steps=9 format=3 uid="uid://wxbahbmde1cc"]
+
+[ext_resource type="Script" path="res://scenes/world/setting_panel_container.gd" id="1_da0lq"]
+[ext_resource type="Script" path="res://UI/game_button.gd" id="2_513dk"]
+[ext_resource type="PackedScene" uid="uid://0frv3gm1tlas" path="res://UI/main_volume.tscn" id="3_bt02l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_spbv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hwj1v"]
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ai3e"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_8u3ht"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_w856g"]
+font_size = 32
+
+[node name="SettingPanelContainer" type="PanelContainer"]
+visible = false
+custom_minimum_size = Vector2(1200, 900)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_spbv8")
+script = ExtResource("1_da0lq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "设置"
+label_settings = SubResource("LabelSettings_hwj1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GeneralGameButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 96)
+layout_mode = 2
+text = "基础设置"
+script = ExtResource("2_513dk")
+
+[node name="AudioGameButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 96)
+layout_mode = 2
+text = "音频设置"
+script = ExtResource("2_513dk")
+
+[node name="ContextPanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ai3e")
+
+[node name="GeneralContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer"]
+layout_mode = 2
+text = "全局设置"
+label_settings = SubResource("LabelSettings_8u3ht")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenModeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/ScreenModeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "屏幕模式"
+label_settings = SubResource("LabelSettings_w856g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenModeCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/ScreenModeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+text = "开/关"
+
+[node name="CameraModeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/CameraModeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "相机模式"
+label_settings = SubResource("LabelSettings_w856g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CameraModeCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/CameraModeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+text = "开/关"
+
+[node name="KeyTipContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/KeyTipContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "是否开启按键提示"
+label_settings = SubResource("LabelSettings_w856g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyTipCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/KeyTipContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+button_pressed = true
+text = "开/关"
+
+[node name="GlowContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/GlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "是否开启辉光"
+label_settings = SubResource("LabelSettings_w856g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlowCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/GeneralContainer/GlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+button_pressed = true
+text = "开/关"
+
+[node name="AudioContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/AudioContainer"]
+layout_mode = 2
+text = "音量设置"
+label_settings = SubResource("LabelSettings_8u3ht")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainVolume" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/AudioContainer" instance=ExtResource("3_bt02l")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BGMVolume" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/AudioContainer" instance=ExtResource("3_bt02l")]
+unique_name_in_owner = true
+layout_mode = 2
+volume_name = "BGM"
+current_bus = 1
+
+[node name="SFXVolume" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/AudioContainer" instance=ExtResource("3_bt02l")]
+unique_name_in_owner = true
+layout_mode = 2
+volume_name = "SFX"
+current_bus = 2
+
+[node name="EnvironmentVolume" parent="MarginContainer/VBoxContainer/HBoxContainer/ContextPanelContainer/MarginContainer/PanelContainer/AudioContainer" instance=ExtResource("3_bt02l")]
+unique_name_in_owner = true
+layout_mode = 2
+volume_name = "环境"
+current_bus = 3
+
+[node name="CloseGameButton" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 96)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "返回"
+script = ExtResource("2_513dk")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

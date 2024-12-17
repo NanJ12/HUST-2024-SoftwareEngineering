@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://dav3kknussax"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_4nuiy"]
+
+[resource]
+script = ExtResource("1_4nuiy")
+sentences = Array[String](["Ghost：孩子，这里交给我。", "Ghost：你快走，把水晶重新激活", "Evil Lumine：怎么？你也来保护她？", "Evil Lumine：好奇吗，鲁米娜？", "Evil Lumine：你难道没认出来那幽灵是谁吗？", "Evil Lumine：失败的你，多可怜，连自己都认不出来了。", "Evil Lumine：你还在挣扎什么！", "Evil Lumine：成为我不好吗？！", "Evil Lumine：那些驻民，那些冒险者，那些幽灵……", "Evil Lumine：哪里有答案……哪里有光！", "Evil Lumine：你以为你能找到什么！"])

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HealthBuff" load_steps=4 format=3 uid="uid://cyxid73kblkwa"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/health_buff.gd" id="1_imoi4"]
+[ext_resource type="Texture2D" uid="uid://dvmf1irvoyx7x" path="res://assets/icon/光明.png" id="1_pxtb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yug5"]
+atlas = ExtResource("1_pxtb0")
+
+[resource]
+script = ExtResource("1_imoi4")
+buff_name = "光明III"
+buff_level = 3
+buff_desc = "百分比增加亮度上限"
+buff_texture = SubResource("AtlasTexture_8yug5")

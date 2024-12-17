@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgxsodgofnycj"]
+
+[ext_resource type="Script" path="res://resource/organs/trigger_organ/pressure_plate_organ.gd" id="1_funqc"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_e0704"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i53c8"]
+atlas = ExtResource("2_e0704")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntjiw"]
+size = Vector2(42, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqok4"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_j80fr"]
+font_size = 24
+
+[node name="PressurePlateOrgan" type="CharacterBody2D"]
+collision_layer = 48
+script = ExtResource("1_funqc")
+organ_name = "压力板"
+organ_desc = "当玩家站上去以后会激活某些链接的机关"
+organ_texture = SubResource("AtlasTexture_i53c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e0704")
+region_enabled = true
+region_rect = Rect2(0, 48, 48, 48)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, 24, -21, 21, 21, 21, 23, 24)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 19.5)
+shape = SubResource("RectangleShape2D_ntjiw")
+
+[node name="FTipPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 64)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -130.0
+offset_right = 100.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lqok4")
+
+[node name="Label" type="Label" parent="FTipPanelContainer"]
+layout_mode = 2
+text = "踩到压力板能激活对应的机关
+（方块也可以激活压力板！）"
+label_settings = SubResource("LabelSettings_j80fr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

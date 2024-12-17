@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerColorRed" load_steps=4 format=3 uid="uid://ccnf1rkfvxu5h"]
+
+[ext_resource type="Script" path="res://scripts/other_class/player_color/player_color_red.gd" id="1_3m6j0"]
+
+[sub_resource type="Gradient" id="Gradient_p4dvt"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8bfs"]
+gradient = SubResource("Gradient_p4dvt")
+
+[resource]
+script = ExtResource("1_3m6j0")
+player_color_name = "红色"
+color = Color(1, 0, 0, 1)
+player_color_desc = "当玩家进入红色状态时..."
+player_color_texture = SubResource("GradientTexture2D_y8bfs")

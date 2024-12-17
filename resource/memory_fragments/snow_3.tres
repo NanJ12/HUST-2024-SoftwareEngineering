@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://dyfdt6qeikqod"]
+
+[ext_resource type="Texture2D" uid="uid://bqvks0k74k7r4" path="res://assets/icon/雪山3.png" id="1_4jp1e"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_q1jxp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_4jp1e")
+
+[resource]
+script = ExtResource("2_q1jxp")
+memory_fragment_name = "雪山-3"
+memory_fragment_context = "可是你没有找到伙伴。
+一个冒险者陪着你走到了最高处。苍山负雪，明烛天南，风扬起的积雪扑打在你们的脚下，而天光映着雪色照在你们的身上。远处的云彩连成一线，在柔软的光中晃荡着，晃荡在这个世界之上。
+然后他就那么停下了脚步，鲁米娜——
+他就那么停下了脚步，而你们就那么又回到平行的轨道上。
+冒险者完成了他的冒险，不再对天空之上有半分好奇。他已攀登他的高峰，再不渴求更多的挑战。他回答不了你的问题，也不愿再前进，于是他拒绝了你。于是你明白，他不是你的伙伴，你终究需要一个人前往。
+你看了这短暂的伙伴最后一眼。他静静地伫立在那里，沉默地，就和那片雪原一样。
+你擦干净不知为何而流的泪，再不回头。
+鲁米娜，你是茫茫白雪里的一点光。"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

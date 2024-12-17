@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://bj7o3fhgjd0ex"]
+
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="1_4uhfy"]
+[ext_resource type="Texture2D" uid="uid://d4f7786p6kdxq" path="res://assets/icon/icon.png" id="1_ponvh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcy51"]
+atlas = ExtResource("1_ponvh")
+
+[resource]
+script = ExtResource("1_4uhfy")
+memory_fragment_name = "冒险者-1"
+memory_fragment_context = "如果你问这个世界上最勇敢的人是谁，每个人都会告诉你：是冒险者们。
+他们从四面八方的角落里走来，跨过丛林与沙漠，最终都汇聚在雪山之下，试图征服这最后的高峰。那高峰上是终年不化的积雪，暴风裹着冰籽席卷每一寸向上的道路，随处都是丧命的危险。但尽管如此，这些冒险者们，这些勇敢的挑战者们，还是义无反顾地前进着。
+他们有人再没回来，有人征服了高峰，有人愈挫愈勇。
+但是征服最后的高峰之后又该何去何从？每个人都有自己的答案。
+"
+memory_fragment_rarity = 0
+memory_fragment_texture = SubResource("AtlasTexture_vcy51")

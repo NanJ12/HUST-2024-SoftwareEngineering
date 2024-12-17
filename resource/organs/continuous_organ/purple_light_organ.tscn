@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://buntdyv2jplaq"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/purple_light_organ.gd" id="1_2dmn5"]
+[ext_resource type="Shader" path="res://shaders/hight_light.gdshader" id="3_br36i"]
+[ext_resource type="Script" path="res://scripts/tool/deer_polygon.gd" id="4_7f5yc"]
+
+[sub_resource type="Gradient" id="Gradient_pqw18"]
+offsets = PackedFloat32Array(0, 0.0133333, 0.693333)
+colors = PackedColorArray(1, 0, 1, 1, 1, 0, 1, 0.784314, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mtjej"]
+gradient = SubResource("Gradient_pqw18")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivbyc"]
+shader = ExtResource("3_br36i")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.1
+shader_parameter/shine_angle = 45.0
+shader_parameter/is_up_and_down = true
+shader_parameter/amplitude = 32.0
+shader_parameter/speed = 0.75
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4a47h"]
+gradient = SubResource("Gradient_pqw18")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htyr3"]
+radius = 256.0
+
+[node name="PurpleLightOrgan" type="CharacterBody2D"]
+collision_layer = 32
+script = ExtResource("1_2dmn5")
+organ_name = "紫光"
+organ_desc = "玩家进入其中会快速减少亮度。"
+organ_texture = SubResource("GradientTexture2D_mtjej")
+
+[node name="Light" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_ivbyc")
+texture = SubResource("GradientTexture2D_mtjej")
+texture_offset = Vector2(32, 32)
+polygon = PackedVector2Array(24, 0, 20.7846, 12, 12, 20.7846, 1.46953e-15, 24, -12, 20.7846, -20.7846, 12, -24, 2.93906e-15, -20.7846, -12, -12, -20.7846, -4.40858e-15, -24, 12, -20.7846, 20.7846, -12)
+script = ExtResource("4_7f5yc")
+polygon_edge = 12
+polygon_length = 24.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+color = Color(1, 1, 1, 0.458824)
+energy = 3.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4a47h")
+texture_scale = 1.5
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_htyr3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

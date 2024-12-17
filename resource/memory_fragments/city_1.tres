@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://d0resywi6p5h1"]
+
+[ext_resource type="Texture2D" uid="uid://c4tsih33kox5i" path="res://assets/icon/城市1.png" id="1_5a7ub"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="1_g2edu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_5a7ub")
+
+[resource]
+script = ExtResource("1_g2edu")
+memory_fragment_name = "城市-1"
+memory_fragment_context = "你会对着这片砖红色的天空发呆吗，鲁米娜？
+你会不会对着那些残破生锈的钢管心生疑惑，好奇清水曾经是如何从其中汩汩流出？会不会看着那些闪烁不清的灯光和霓虹广告牌上的星点火花，好奇曾经的繁华？或者穿梭在那些断壁残垣之间，好奇曾经这里曾经是否也人来人往、车水马龙？
+但是鲁米娜，这里只有一片砖红色的天空。
+天空中没有一颗星。天空下只有这昏暗沉睡的城市，和你这自己都懵懂的光。
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://ukmmg81g8l5a"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_5s3uw"]
+
+[resource]
+script = ExtResource("1_5s3uw")
+sentences = Array[String](["Lumine：你不是答案。", "Evil Lumine：是吗，那答案是什么？", "Lumine：我会找到的。"])

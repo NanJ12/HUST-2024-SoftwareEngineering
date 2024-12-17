@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://uv2c3pfmb67c"]
+
+[ext_resource type="Texture2D" uid="uid://d0h2jbs3iem1j" path="res://assets/icon/雪山2.png" id="1_vt1sl"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_lj01u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_vt1sl")
+
+[resource]
+script = ExtResource("2_lj01u")
+memory_fragment_name = "雪山-2"
+memory_fragment_context = "雪原比你到过的任何一个地方都寂寥。
+它比丛林安静，没有草原或高山的人烟，比海洋压抑，却又比你诞生的城市平和淡然。它沉默地伫立在天空之下，任由暴风雪席卷而来又匆匆离去，不置一词。
+无数的冒险者和你一样被吸引过来，鲁米娜。你们在路上相遇，彼此陪伴着度过一段向上攀登的时光，又回归互不相干的道路上。你也曾在路上看见那些失败的冒险者——他们的过去、辉煌或是后悔，都掩埋在这一片雪里，直到此刻，铺天盖地地向你涌来。
+你会好奇吗，鲁米娜？你会好奇他们的生平吗，会希望从这群过去的、现在的勇敢之人中寻找和你一同追寻答案的伙伴吗？
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

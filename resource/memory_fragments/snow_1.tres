@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://cn2mh57eq65s2"]
+
+[ext_resource type="Texture2D" uid="uid://eouc4n57fdhx" path="res://assets/icon/雪山1.png" id="1_1b2t0"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_r7n7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_1b2t0")
+
+[resource]
+script = ExtResource("2_r7n7c")
+memory_fragment_name = "雪山-1"
+memory_fragment_context = "你离开了那群驻民，继续向前。
+幽灵让你前往天空，驻民口里的山神亦在白雪之上，所有的迹象都告诉：答案就在天上。
+可是天空很遥远。你眼前只有白茫茫的雪，从天上，到脚边。
+你只是茫茫白雪里的一点微光。
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

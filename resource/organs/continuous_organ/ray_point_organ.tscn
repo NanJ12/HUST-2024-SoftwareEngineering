@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://btbuhtdq2mw6y"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/ray_point_organ.gd" id="1_d4pxf"]
+[ext_resource type="Shader" path="res://shaders/hight_light.gdshader" id="2_p70d5"]
+[ext_resource type="Script" path="res://scripts/tool/deer_polygon.gd" id="3_vagfn"]
+
+[sub_resource type="Gradient" id="Gradient_e0eua"]
+offsets = PackedFloat32Array(0, 0.467005)
+colors = PackedColorArray(0.939, 0, 0.22, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lxq41"]
+gradient = SubResource("Gradient_e0eua")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqnef"]
+shader = ExtResource("2_p70d5")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.1
+shader_parameter/shine_angle = 45.0
+shader_parameter/is_up_and_down = true
+shader_parameter/amplitude = 32.0
+shader_parameter/speed = 0.75
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4xe3"]
+radius = 26.0
+
+[node name="RayPointOrgan" type="CharacterBody2D"]
+collision_layer = 32
+script = ExtResource("1_d4pxf")
+organ_name = "光点"
+organ_desc = "当玩家的激光射到上面可以像光点方向吸"
+organ_texture = SubResource("GradientTexture2D_lxq41")
+
+[node name="Light" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_vqnef")
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_lxq41")
+texture_offset = Vector2(64, 64)
+texture_scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(36, 0, 34.7733, 9.31749, 31.1769, 18, 25.4558, 25.4558, 18, 31.1769, 9.31749, 34.7733, 2.20429e-15, 36, -9.31749, 34.7733, -18, 31.1769, -25.4558, 25.4558, -31.1769, 18, -34.7733, 9.31749, -36, 4.40858e-15, -34.7733, -9.31749, -31.1769, -18, -25.4558, -25.4558, -18, -31.1769, -9.31749, -34.7733, -6.61287e-15, -36, 9.31749, -34.7733, 18, -31.1769, 25.4558, -25.4558, 31.1769, -18, 34.7733, -9.31749)
+script = ExtResource("3_vagfn")
+polygon_edge = 24
+polygon_length = 36.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_y4xe3")
+debug_color = Color(0, 0.6, 0.701961, 0.458824)

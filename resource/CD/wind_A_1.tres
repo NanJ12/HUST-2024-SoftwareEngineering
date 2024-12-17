@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://njgwnn174kpo"]
+
+[ext_resource type="AudioStream" uid="uid://bqvset7ktae64" path="res://assets/audios/wind_A_1.ogg" id="1_icjin"]
+[ext_resource type="Resource" uid="uid://b0x6p7yv6cdrr" path="res://resource/buffs/feather_fall_buff_I.tres" id="2_4f4kx"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_g8vly"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="4_xlh2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dod0"]
+atlas = ExtResource("3_g8vly")
+region = Rect2(0, 288, 96, 96)
+
+[resource]
+script = ExtResource("4_xlh2h")
+cd_name = "管乐A-1"
+cd_audio = ExtResource("1_icjin")
+cd_texture = SubResource("AtlasTexture_3dod0")
+cd_desc = "装配可获得充沛II的Buff
+充沛：百分比增加体力上限
+"
+cd_buff = ExtResource("2_4f4kx")

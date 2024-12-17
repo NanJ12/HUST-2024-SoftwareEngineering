@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://b0jwv70uwo263"]
+
+[ext_resource type="Texture2D" uid="uid://d4f7786p6kdxq" path="res://assets/icon/icon.png" id="1_jr23t"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_hqfdf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jxwh"]
+atlas = ExtResource("1_jr23t")
+
+[resource]
+script = ExtResource("2_hqfdf")
+memory_fragment_name = "驻民-3"
+memory_fragment_context = "驻民们有自己的信仰。
+他们相信着皑皑白雪上山神的庇佑，庇佑他们远离城市、远离喧嚣、远离灭亡，使他们得以光芒不灭。他们会定期地举办仪式，向着白雪前进，在雪原前停下自己的脚步，拿出米粮与牲祭，围着篝火舞蹈。他们管这叫作“朝圣”，叫作“庆典”。
+皑皑兮白雪，庇我之长乐。渺渺兮山水，护我之安康。
+他们既不排外，亦不热情。若有人要加入，他们不介意；若有人质疑，他们恍若未闻。祖祖辈辈的传承下，他们坚定不移地守着自己的信仰，以此作为支点、作为支柱，撑起他们一代代的生活。
+什么？山神在哪？
+不知道。但一定存在。
+"
+memory_fragment_rarity = 0
+memory_fragment_texture = SubResource("AtlasTexture_5jxwh")

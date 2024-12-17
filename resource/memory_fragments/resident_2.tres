@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://dy7ng3ckuko6a"]
+
+[ext_resource type="Texture2D" uid="uid://d4f7786p6kdxq" path="res://assets/icon/icon.png" id="1_8ffy6"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_hckqc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jxwh"]
+atlas = ExtResource("1_8ffy6")
+
+[resource]
+script = ExtResource("2_hckqc")
+memory_fragment_name = "驻民-2"
+memory_fragment_context = "“驻民”是幽灵对他们的称呼。在他们那模糊不清的记忆里，偶尔也会突然想起这群驻民的身世来历。
+那是一批提前察觉了灾难到临的人，也许是先知，又或者只是对那种繁华感到了疲惫。他们抛下曾经的一切，隐入无人的山脉之中。他们如愿以偿地被遗忘，在无人在意的地方安居乐业，也最终逃离和城市一起崩塌的结局。
+"
+memory_fragment_rarity = 0
+memory_fragment_texture = SubResource("AtlasTexture_5jxwh")

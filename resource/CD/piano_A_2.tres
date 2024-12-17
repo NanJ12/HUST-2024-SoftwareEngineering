@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://diyxwq1xgpgel"]
+
+[ext_resource type="AudioStream" uid="uid://c875x3no8yq3o" path="res://assets/audios/piano_A_2.ogg" id="1_8ibsc"]
+[ext_resource type="Resource" uid="uid://bjw4h7jjaarwq" path="res://resource/buffs/sprint_buff_II.tres" id="2_qfech"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="3_2kmtx"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_4jxhc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbsin"]
+atlas = ExtResource("3_4jxhc")
+region = Rect2(96, 96, 96, 96)
+
+[resource]
+script = ExtResource("3_2kmtx")
+cd_name = "钢琴A-2"
+cd_audio = ExtResource("1_8ibsc")
+cd_texture = SubResource("AtlasTexture_rbsin")
+cd_desc = "装配可获得远冲II的Buff
+远冲：百分比增加冲刺距离"
+cd_buff = ExtResource("2_qfech")

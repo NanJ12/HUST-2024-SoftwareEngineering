@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4s00dx6ytvdt"]
+
+[ext_resource type="Script" path="res://resource/organs/trigger_organ/hidden_block_organ.gd" id="1_sgcdx"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_0swuu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa2bp"]
+atlas = ExtResource("2_0swuu")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbi2n"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy8mi"]
+size = Vector2(48, 47)
+
+[node name="HiddenBlockOrgan" type="CharacterBody2D"]
+collision_layer = 32
+script = ExtResource("1_sgcdx")
+organ_name = "隐藏方块"
+organ_desc = "受到激活会隐藏的方块
+"
+organ_texture = SubResource("AtlasTexture_pa2bp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0swuu")
+region_enabled = true
+region_rect = Rect2(48, 96, 48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bbi2n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vy8mi")

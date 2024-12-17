@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://cfmkp3hs6stoe"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="1_b2ell"]
+[ext_resource type="AudioStream" uid="uid://vpvc1gkh7jyc" path="res://assets/audios/guitar_A_2.ogg" id="1_iv4ha"]
+[ext_resource type="Resource" uid="uid://do6jnj4plgbv4" path="res://resource/buffs/continue_sprint_buff_II.tres" id="2_s17qn"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_qi4lb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymxav"]
+atlas = ExtResource("3_qi4lb")
+region = Rect2(96, 480, 96, 96)
+
+[resource]
+script = ExtResource("1_b2ell")
+cd_name = "吉他A-2"
+cd_audio = ExtResource("1_iv4ha")
+cd_texture = SubResource("AtlasTexture_ymxav")
+cd_desc = "装配可获得连冲II的Buff
+连冲：百分比减少冲刺CD"
+cd_buff = ExtResource("2_s17qn")

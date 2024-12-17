@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FeatherFallBuff" load_steps=4 format=3 uid="uid://b0x6p7yv6cdrr"]
+
+[ext_resource type="Texture2D" uid="uid://pmduvqt6fqv5" path="res://assets/icon/羽落.png" id="1_nq645"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/feather_fall_buff.gd" id="1_yiybr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uea4f"]
+atlas = ExtResource("1_nq645")
+
+[resource]
+script = ExtResource("1_yiybr")
+buff_name = "羽落"
+buff_level = 1
+buff_desc = "百分比减少漂浮降落速度"
+buff_texture = SubResource("AtlasTexture_uea4f")

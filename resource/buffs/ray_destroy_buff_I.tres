@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BaseBuff" load_steps=4 format=3 uid="uid://dr7c2hm0gdkrx"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/base_buff.gd" id="1_6td5j"]
+[ext_resource type="Texture2D" uid="uid://dv6jfc70q6x5e" path="res://assets/icon/强电.png" id="1_tpu5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5r3t"]
+atlas = ExtResource("1_tpu5g")
+
+[resource]
+script = ExtResource("1_6td5j")
+buff_name = "强电"
+buff_level = 1
+buff_desc = "激光强度增加"
+buff_texture = SubResource("AtlasTexture_q5r3t")

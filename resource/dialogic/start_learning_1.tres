@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://b8n43wjtsaheq"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_r2fvk"]
+
+[resource]
+script = ExtResource("1_r2fvk")
+sentences = Array[String](["Ghost：跳上去", "（可以按空格进行跳跃）", "（游戏默认的跳跃是惯性跳跃）", "（如果无法适应，可以在技能树面板“F2”学习空中转体）"])

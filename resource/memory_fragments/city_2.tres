@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://blrgr3dfuo2si"]
+
+[ext_resource type="Texture2D" uid="uid://dcovc28m110r0" path="res://assets/icon/城市2.png" id="1_puw50"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_ysyk4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_puw50")
+
+[resource]
+script = ExtResource("2_ysyk4")
+memory_fragment_name = "城市-2"
+memory_fragment_context = "这里曾经是一片繁荣的城市。
+那个时候，一切还不是这般沉默的砖红色。歌舞升平都不足以形容这种繁华，仿佛是从天上泼了一桶油墨，流动着、组成这个五彩缤纷的不夜之城。热闹的人潮从早到晚、永不止歇，永远都是阳光、永远都有笑脸、永远都是欢庆。人们络绎不绝地来了又去，怀揣着各自的期盼，穿梭在高楼大厦之间，渴望着加入这片繁荣、渴望着成为这美好世界的一部分。
+好日子就像公交车，每个人都想投币坐上两站。而在这个城市里，没有人愿意下车。
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

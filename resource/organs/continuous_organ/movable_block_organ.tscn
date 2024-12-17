@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhs8xs0jsg6wq"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/movable_block_organ.gd" id="1_bye02"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_404in"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d02nj"]
+atlas = ExtResource("2_404in")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ntep"]
+size = Vector2(46, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g45hf"]
+size = Vector2(54, 54)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fctt"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_ogap5"]
+font_size = 24
+
+[node name="MovableBlockOrgan" type="CharacterBody2D"]
+collision_layer = 48
+collision_mask = 17
+floor_max_angle = 1.48353
+script = ExtResource("1_bye02")
+organ_name = "可动方块"
+organ_desc = "玩家靠近以后按住F进行推动或者拉取
+"
+organ_texture = SubResource("AtlasTexture_d02nj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_404in")
+region_enabled = true
+region_rect = Rect2(144, 144, 48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ntep")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_g45hf")
+
+[node name="FTipPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 96)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -130.0
+offset_right = 100.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fctt")
+
+[node name="Label" type="Label" parent="FTipPanelContainer"]
+layout_mode = 2
+text = "按下F进行推/拉"
+label_settings = SubResource("LabelSettings_ogap5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

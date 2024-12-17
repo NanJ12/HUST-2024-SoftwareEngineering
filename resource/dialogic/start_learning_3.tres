@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://b8h1lja8icrv7"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_yeyt2"]
+
+[resource]
+script = ExtResource("1_yeyt2")
+sentences = Array[String](["Ghost：相信自己，冲！", "（可以在冲刺后马上按空格进行冲刺跳跃）", "Tip：“冲刺+跳跃+漂浮”"])

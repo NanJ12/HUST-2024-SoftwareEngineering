@@ -1,0 +1,44 @@
+[gd_scene load_steps=15 format=3 uid="uid://djhtaa1ix2yx2"]
+
+[ext_resource type="Script" path="res://scripts/audio_manager/audio_manager.gd" id="1_albor"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="2_uujaf"]
+[ext_resource type="Resource" uid="uid://dbxoaceg1wha" path="res://resource/CD/drum_A_1.tres" id="3_befvm"]
+[ext_resource type="AudioStream" uid="uid://cbkxix6tjlftq" path="res://assets/audios/SFX/Hurt.ogg" id="6_81j1v"]
+[ext_resource type="Resource" uid="uid://ckwcj65dgem4" path="res://resource/CD/e_A_1.tres" id="6_xcp2c"]
+[ext_resource type="Resource" uid="uid://xwdxra4omw12" path="res://resource/CD/guitar_A_1.tres" id="7_mgwsp"]
+[ext_resource type="AudioStream" uid="uid://3ys852wsc06t" path="res://assets/audios/SFX/Jump.ogg" id="7_soirp"]
+[ext_resource type="AudioStream" uid="uid://d0nuxmxmtc00v" path="res://assets/audios/SFX/Sprint.ogg" id="8_jpdap"]
+[ext_resource type="Resource" uid="uid://bwle2ll51w2lk" path="res://resource/CD/piano_A_1.tres" id="10_iypf5"]
+[ext_resource type="Resource" uid="uid://dmxptgb8y40r0" path="res://resource/CD/string_A_1.tres" id="12_o5ets"]
+[ext_resource type="AudioStream" uid="uid://b073qtl7a3dhu" path="res://assets/audios/SFX/累了.ogg" id="13_66jjd"]
+[ext_resource type="AudioStream" uid="uid://f5wfae6hbqik" path="res://assets/audios/SFX/自言自语.ogg" id="14_2u1vk"]
+[ext_resource type="Resource" uid="uid://njgwnn174kpo" path="res://resource/CD/wind_A_1.tres" id="14_4kala"]
+[ext_resource type="AudioStream" uid="uid://duk725nc87yhk" path="res://assets/audios/SFX/要消失了.ogg" id="15_jra66"]
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("bgm_players")]
+process_mode = 3
+script = ExtResource("1_albor")
+has_cd = Array[ExtResource("2_uujaf")]([ExtResource("3_befvm"), ExtResource("6_xcp2c"), ExtResource("7_mgwsp"), ExtResource("10_iypf5"), ExtResource("12_o5ets"), ExtResource("14_4kala")])
+sfxs = Array[AudioStreamOggVorbis]([ExtResource("6_81j1v"), ExtResource("7_soirp"), ExtResource("8_jpdap"), ExtResource("13_66jjd"), ExtResource("14_2u1vk"), ExtResource("15_jra66")])
+bgm_players = [NodePath("BGMPlayer1"), NodePath("BGMPlayer2"), NodePath("BGMPlayer3"), NodePath("BGMPlayer4")]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="BGMPlayer1" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="BGMPlayer2" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="BGMPlayer3" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="BGMPlayer4" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="OtherBGMPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="EnvironmentPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Environment"

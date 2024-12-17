@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://m50ssdqef5js"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_u2rd0"]
+
+[resource]
+script = ExtResource("1_u2rd0")
+sentences = Array[String](["Lumine：你们在干什么？为什么要围着它跳舞？", "Cyan：朝圣礼。你要一起来吗？", "Lumine：朝圣礼？那是什么？", "Cyan：祭拜山神。", "Lumine：……山神？这又是什么东西？", "Lumine：算了……你们这位神，在哪里？", "Cyan：天上，白雪之上……你要去找山神？", "Lumine：也许吧，如果祂真的存在。", "Cyan：祂当然存在，但你不该去冒犯祂。", "Lumine：……莫名其妙。"])

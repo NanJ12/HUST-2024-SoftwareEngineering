@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://cdsa1irg05ccb"]
+
+[ext_resource type="Texture2D" uid="uid://bi1gvkivaomi5" path="res://assets/icon/高原2.png" id="1_5u8ax"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_ah86q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_5u8ax")
+
+[resource]
+script = ExtResource("2_ah86q")
+memory_fragment_name = "高原-2"
+memory_fragment_context = "可这里会有你想要找到的答案吗，鲁米娜？
+我们都不知道。
+问问那些驻民吧！他们也许能告诉你答案，告诉你在这日复一日的生活里是什么让他们恬然自得，告诉你那些光、那些迷茫、那些答案。也许他们会告诉你，为何他们不被那洗刷了城市的雨侵袭……
+为何他们未曾熄灭，却也点不亮光芒。
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

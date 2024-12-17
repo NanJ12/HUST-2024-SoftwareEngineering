@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://cfsiuevxp3abi"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_hr10b"]
+
+[resource]
+script = ExtResource("1_hr10b")
+sentences = Array[String](["Red：你找到答案了吗？"])

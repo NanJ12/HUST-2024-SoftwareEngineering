@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://w1ibvupfi7u4"]
+
+[ext_resource type="Texture2D" uid="uid://dfw6g01fhlwte" path="res://assets/ui/按钮.png" id="1_vppyj"]
+[ext_resource type="Texture2D" uid="uid://ba012e4pr40wj" path="res://assets/ui/面板.png" id="2_4iw3q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v0d1n"]
+texture = ExtResource("1_vppyj")
+texture_margin_left = 60.0
+texture_margin_top = 48.0
+texture_margin_right = 60.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(64, 65, 309, 93)
+modulate_color = Color(1, 1, 1, 0.490196)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_66rlg"]
+texture = ExtResource("1_vppyj")
+texture_margin_left = 60.0
+texture_margin_top = 48.0
+texture_margin_right = 60.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(64, 65, 309, 93)
+modulate_color = Color(0.446777, 0.446777, 0.446777, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rd5br"]
+texture = ExtResource("1_vppyj")
+texture_margin_left = 60.0
+texture_margin_top = 48.0
+texture_margin_right = 60.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(64, 65, 309, 93)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ko5wj"]
+texture = ExtResource("1_vppyj")
+texture_margin_left = 60.0
+texture_margin_top = 48.0
+texture_margin_right = 60.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(64, 65, 309, 93)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3p6aq"]
+texture = ExtResource("2_4iw3q")
+texture_margin_left = 61.0
+texture_margin_top = 62.0
+texture_margin_right = 60.0
+texture_margin_bottom = 68.0
+region_rect = Rect2(40, 21, 1044, 781)
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_v0d1n")
+Button/styles/hover = SubResource("StyleBoxTexture_66rlg")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_66rlg")
+Button/styles/normal = SubResource("StyleBoxTexture_rd5br")
+Button/styles/pressed = SubResource("StyleBoxTexture_ko5wj")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_3p6aq")

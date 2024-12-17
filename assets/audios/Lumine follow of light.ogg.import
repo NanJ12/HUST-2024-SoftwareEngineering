@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2gepq3201tsf"
+path="res://.godot/imported/Lumine follow of light.ogg-b934b93c773548cd06ed367e599881a8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audios/Lumine follow of light.ogg"
+dest_files=["res://.godot/imported/Lumine follow of light.ogg-b934b93c773548cd06ed367e599881a8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=108.0
+beat_count=0
+bar_beats=4

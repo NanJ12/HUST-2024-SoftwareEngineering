@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogicContext" load_steps=2 format=3 uid="uid://t5vw7ra3yysb"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_qg4ck"]
+
+[resource]
+script = ExtResource("1_qg4ck")
+sentences = Array[String](["Lumine：你好？", "Red：……", "Lumine：这里是哪……不，这不重要。那个水晶是什么？", "Red：……你能点亮水晶？你是谁？", "Lumine：我不知道。", "Red：……没关系，这里没有人知道自己是谁。", "Lumine：所以那个水晶是什么？为什么我能点亮它？", "Red：我不知道，我只是一个幽灵，我回答不了你……但是有人可以。", "Red：……你要是好奇，就去天空上吧，所有的答案都在那里。
+", "Red：如果你真的找到了答案……也请告诉我吧。"])

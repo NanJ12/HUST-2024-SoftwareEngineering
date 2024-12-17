@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl3fivoyrrwuh"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/shoot_the_blocks_organ_right.gd" id="1_pwt8l"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_h2gae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23w2n"]
+size = Vector2(5, 48)
+
+[sub_resource type="Gradient" id="Gradient_4gnli"]
+offsets = PackedFloat32Array(0.0733333, 0.719101)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_67l5b"]
+gradient = SubResource("Gradient_4gnli")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="ShootTheBlocksOrgan" type="CharacterBody2D"]
+collision_layer = 32
+script = ExtResource("1_pwt8l")
+organ_name = "穿梭方块"
+organ_desc = "按照对应方向移动
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_h2gae")
+region_enabled = true
+region_rect = Rect2(0, 144, 48, 48)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-26.5, 0)
+shape = SubResource("RectangleShape2D_23w2n")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 1, 0.458824)
+energy = 0.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_67l5b")
+texture_scale = 1.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://gv2wfcepxvh3"]
+
+[ext_resource type="Texture2D" uid="uid://bl66owkgkdhf" path="res://assets/icon/高原3.png" id="1_xp0x2"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_bsmsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_xp0x2")
+
+[resource]
+script = ExtResource("2_bsmsl")
+memory_fragment_name = "高原-3"
+memory_fragment_context = "可是看看那些驻民吧，他们什么也回答不了，他们和那群游荡在城市里的幽灵一样莫名其妙。
+这里没有你想要的答案，鲁米娜。
+这里没有烦恼，没有悲伤，也无人同你一般困惑。他们比幽灵更不理解你，他们相信着那高原天空上的存在，相信着神的庇佑，相信着绿的草、白的天、生活的美满皆是神的庇佑。繁星点点的夜空下，他们围着篝火舞蹈，歌颂着快乐、美好和安康，歌颂着在灰色的雨里庇佑他们的神，歌颂着给予他们光芒的神。
+可是他们在歌颂什么？
+没有人在意。这里没有烦恼，没有悲伤，也没有困惑与质疑。
+向上走吧，鲁米娜，向上走吧。答案不在这里。
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

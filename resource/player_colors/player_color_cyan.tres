@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PlayerColorCyan" load_steps=4 format=3 uid="uid://yumkdspcasbc"]
+
+[ext_resource type="Script" path="res://scripts/other_class/player_color/player_color_cyan.gd" id="1_8af47"]
+
+[sub_resource type="Gradient" id="Gradient_qrubh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i4eqb"]
+gradient = SubResource("Gradient_qrubh")
+
+[resource]
+script = ExtResource("1_8af47")
+player_color_name = "青色"
+color = Color(0, 1, 1, 1)
+player_color_desc = "玩家的青颜色..."
+player_color_texture = SubResource("GradientTexture2D_i4eqb")

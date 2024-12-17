@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuf6pu333q3o0"]
+
+[ext_resource type="Script" path="res://resource/organs/continuous_organ/platform_organ.gd" id="1_cax8f"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_qvap0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adl43"]
+atlas = ExtResource("2_qvap0")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vssgj"]
+size = Vector2(48, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq5er"]
+size = Vector2(56, 44)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sl3pr"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jpxc"]
+font_size = 24
+
+[node name="PlatformOrgan" type="CharacterBody2D"]
+collision_layer = 48
+script = ExtResource("1_cax8f")
+organ_name = "平台"
+organ_desc = "玩家在平台上按下可以穿过平台
+跳到平台下时会被传送到平台上"
+organ_texture = SubResource("AtlasTexture_adl43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qvap0")
+region_enabled = true
+region_rect = Rect2(96, 96, 48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.25)
+shape = SubResource("RectangleShape2D_vssgj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.81195e-06, 12)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_gq5er")
+
+[node name="FTipPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 64)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -130.0
+offset_right = 100.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sl3pr")
+
+[node name="Label" type="Label" parent="FTipPanelContainer"]
+layout_mode = 2
+text = "按S可以下平台"
+label_settings = SubResource("LabelSettings_3jpxc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

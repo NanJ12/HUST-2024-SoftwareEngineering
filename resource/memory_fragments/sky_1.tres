@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://c0jup503q05pf"]
+
+[ext_resource type="Texture2D" uid="uid://d4f7786p6kdxq" path="res://assets/icon/icon.png" id="1_4rcve"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="1_xcxfe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mxsr"]
+atlas = ExtResource("1_4rcve")
+
+[resource]
+script = ExtResource("1_xcxfe")
+memory_fragment_name = "天空-1"
+memory_fragment_context = "你从未见过如此美丽的景象。
+柔软的云朵组成浮空的岛屿，高悬的太阳把辉光洒满了每一个角落，心情也为之雀跃。
+答案从未如此清晰，答案从未如此接近，答案就在前方。
+你没有犹豫地向前，仿佛看到终得答案的自己。
+"
+memory_fragment_rarity = 0
+memory_fragment_texture = SubResource("AtlasTexture_4mxsr")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogicParagraph" load_steps=9 format=3 uid="uid://b851numkr82kl"]
+
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_context.gd" id="1_kse8y"]
+[ext_resource type="Resource" uid="uid://dfrrg0ugk2y0l" path="res://resource/dialogic/start_learning_0.tres" id="2_hyi08"]
+[ext_resource type="Resource" uid="uid://b8n43wjtsaheq" path="res://resource/dialogic/start_learning_1.tres" id="3_4mfcc"]
+[ext_resource type="Script" path="res://scripts/dialogic/dialogic_paragraph.gd" id="4_fo8jt"]
+[ext_resource type="Resource" uid="uid://dqqnabglb61ut" path="res://resource/dialogic/start_learning_2.tres" id="4_kn20y"]
+[ext_resource type="Resource" uid="uid://b8h1lja8icrv7" path="res://resource/dialogic/start_learning_3.tres" id="5_cvb8v"]
+[ext_resource type="Resource" uid="uid://dfk80btux1ws" path="res://resource/dialogic/start_learning_4.tres" id="6_4n1a4"]
+[ext_resource type="Resource" uid="uid://dav3kknussax" path="res://resource/dialogic/start_learning_5.tres" id="7_ibwvv"]
+
+[resource]
+script = ExtResource("4_fo8jt")
+paragraph_name = ""
+index = 0
+contexts = Array[ExtResource("1_kse8y")]([ExtResource("2_hyi08"), ExtResource("3_4mfcc"), ExtResource("4_kn20y"), ExtResource("5_cvb8v"), ExtResource("6_4n1a4"), ExtResource("7_ibwvv")])

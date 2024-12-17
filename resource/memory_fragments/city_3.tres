@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://d3nd8ie1jk0rw"]
+
+[ext_resource type="Texture2D" uid="uid://cpp2022uh0sjf" path="res://assets/icon/城市3.png" id="1_42737"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_w4eog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_42737")
+
+[resource]
+script = ExtResource("2_w4eog")
+memory_fragment_name = "城市-3"
+memory_fragment_context = "鲁米娜，你知道一切是什么时候改变的吗？
+其实没有人知道。一切都是潜移默化的，但是看起来却像是突如其来的灾难侵袭了这里。
+好日子就像公交车，每个人都能投币坐上两站。这个城市也很慷慨，它包容着每一个乘客，从来不会主动地要求谁下车。一切并无改变，欢庆的仍在欢庆、热闹的地方依旧热闹非凡。但不知道怎么地，人们开始变得麻木、疲惫。
+直到有一天，天空下起了灰色的雨。雨下啊下，没有停歇，洗刷着这天上泼下的油彩，一切都变成五颜六色的一团，顺着雨水流进地底，露出砖红色的泥土、砖红色的墙、砖红色的天空、砖红色的一切。
+没有人知道后面又发生了什么，但它最终变成了现在这般模样，没有一丝变化的砖红色里找不到人烟，只留下一点点不肯消散的残影。
+和你。鲁米娜。你苏醒在了这里，像是这片土地最后的挣扎。"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

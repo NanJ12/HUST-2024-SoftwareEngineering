@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://bwle2ll51w2lk"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="1_3t14h"]
+[ext_resource type="AudioStream" uid="uid://b564yd0kq4mty" path="res://assets/audios/piano_A_1.ogg" id="1_firoc"]
+[ext_resource type="Resource" uid="uid://cq3xh8jyh26f2" path="res://resource/buffs/sprint_buff_I.tres" id="2_yogfd"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_w8mbt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbsin"]
+atlas = ExtResource("3_w8mbt")
+region = Rect2(0, 96, 96, 96)
+
+[resource]
+script = ExtResource("1_3t14h")
+cd_name = "钢琴A-1"
+cd_audio = ExtResource("1_firoc")
+cd_texture = SubResource("AtlasTexture_rbsin")
+cd_desc = "装配可获得远冲I的Buff
+远冲：百分比增加冲刺距离"
+cd_buff = ExtResource("2_yogfd")

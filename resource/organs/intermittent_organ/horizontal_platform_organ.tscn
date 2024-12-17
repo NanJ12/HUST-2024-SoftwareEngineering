@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c535e7bcgc5rs"]
+
+[ext_resource type="Script" path="res://resource/organs/intermittent_organ/horizontal_platform_organ.gd" id="1_8jwx7"]
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_arny8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn2bi"]
+atlas = ExtResource("2_arny8")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq3fs"]
+size = Vector2(48, 20)
+
+[node name="HorizontalPlatformOrgan" type="CharacterBody2D"]
+collision_layer = 48
+script = ExtResource("1_8jwx7")
+organ_time = 2.0
+organ_name = "水平移动平台"
+organ_desc = "会进行水平移动的平台"
+organ_texture = SubResource("AtlasTexture_kn2bi")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_arny8")
+region_enabled = true
+region_rect = Rect2(96, 96, 48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_eq3fs")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

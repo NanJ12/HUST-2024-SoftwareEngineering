@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhqak1kwwyvr0"]
+
+[ext_resource type="Script" path="res://scripts/other_class/memory_prop.gd" id="1_drtf2"]
+[ext_resource type="Texture2D" uid="uid://d4f7786p6kdxq" path="res://assets/icon/icon.png" id="2_cq2wx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ds1gi"]
+radius = 81.0555
+
+[node name="MemoryProp" type="Area2D"]
+script = ExtResource("1_drtf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ds1gi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cq2wx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

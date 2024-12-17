@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://b6mi757kojan6"]
+
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="1_3u06o"]
+[ext_resource type="Texture2D" uid="uid://d4f7786p6kdxq" path="res://assets/icon/icon.png" id="1_bp44v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jxwh"]
+atlas = ExtResource("1_bp44v")
+
+[resource]
+script = ExtResource("1_3u06o")
+memory_fragment_name = "驻民-1"
+memory_fragment_context = "“驻民”不是他们给自己的称呼，他们管自己叫“高原的子民”。
+他们依赖这片高原而生，往上不好奇那白茫茫的雪顶，往下不关心那红沉沉的城市，只在乎寒来暑往、日升月落，依着星辰时序，过着自己的生活。
+日复一日，年复一年，平淡、快乐、满足，不图改变，亦无遗憾。
+"
+memory_fragment_rarity = 0
+memory_fragment_texture = SubResource("AtlasTexture_5jxwh")

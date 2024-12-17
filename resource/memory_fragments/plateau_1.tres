@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MemoryFragment" load_steps=4 format=3 uid="uid://61gnr3ck5ycf"]
+
+[ext_resource type="Texture2D" uid="uid://dids8wjox80ym" path="res://assets/icon/高原1.png" id="1_35t1f"]
+[ext_resource type="Script" path="res://scripts/other_class/memory_fragment.gd" id="2_in862"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4040"]
+atlas = ExtResource("1_35t1f")
+
+[resource]
+script = ExtResource("2_in862")
+memory_fragment_name = "高原-1"
+memory_fragment_context = "你喘了口气，终于离开那个死气沉沉的地方，和那些自说自话的幽灵。这里天高地阔，视野所及之处尽是一片旷远之景，隐约可以看见半山腰处有驻民的迹象。
+这里是不一样的，这里连空气都变得自由。安居乐业的满足感充盈着每一寸空间，人们日出而作、日落而息，幕天席地，对着天空迎面躺下，被微凉的风裹挟着，没有烦恼，不考虑悲伤。
+"
+memory_fragment_rarity = 1
+memory_fragment_texture = SubResource("AtlasTexture_e4040")

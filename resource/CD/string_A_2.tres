@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://dbogryiv6y333"]
+
+[ext_resource type="AudioStream" uid="uid://nelvro4ddmcf" path="res://assets/audios/string_A_2.ogg" id="1_m0blp"]
+[ext_resource type="Resource" uid="uid://cfeekdqr7vdqr" path="res://resource/buffs/abundant_buff_II.tres" id="2_ki2a1"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_5n200"]
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="4_fv4nb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dod0"]
+atlas = ExtResource("3_5n200")
+region = Rect2(96, 192, 96, 96)
+
+[resource]
+script = ExtResource("4_fv4nb")
+cd_name = "弦乐A-2"
+cd_audio = ExtResource("1_m0blp")
+cd_texture = SubResource("AtlasTexture_3dod0")
+cd_desc = "装配可获得充沛II的Buff
+充沛：百分比增加体力上限
+"
+cd_buff = ExtResource("2_ki2a1")

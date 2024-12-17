@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CD" load_steps=6 format=3 uid="uid://dbxoaceg1wha"]
+
+[ext_resource type="Script" path="res://scripts/other_class/cd_class/cd.gd" id="1_flr6d"]
+[ext_resource type="AudioStream" uid="uid://7ieusnppvumm" path="res://assets/audios/drum_A_1.ogg" id="1_kdq6g"]
+[ext_resource type="Resource" uid="uid://btfb616bjfbec" path="res://resource/buffs/health_buff_II.tres" id="2_kiheg"]
+[ext_resource type="Texture2D" uid="uid://de616wvkigjxh" path="res://assets/icon/cd.png" id="3_wugrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbsin"]
+atlas = ExtResource("3_wugrx")
+region = Rect2(0, 0, 96, 96)
+
+[resource]
+script = ExtResource("1_flr6d")
+cd_name = "鼓组A-1"
+cd_audio = ExtResource("1_kdq6g")
+cd_texture = SubResource("AtlasTexture_rbsin")
+cd_desc = "装配可获得光明I的Buff
+光明：百分比增加亮度上限"
+cd_buff = ExtResource("2_kiheg")

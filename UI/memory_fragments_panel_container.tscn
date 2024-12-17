@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy63nrq2h2i6w"]
+
+[ext_resource type="Script" path="res://UI/memory_fragments_panel_container.gd" id="1_6vkuk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pad3d"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_3rp8c"]
+font_size = 24
+
+[node name="MemoryFragmentsPanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(150, 150)
+offset_right = 121.0
+offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pad3d")
+script = ExtResource("1_6vkuk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3rp8c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

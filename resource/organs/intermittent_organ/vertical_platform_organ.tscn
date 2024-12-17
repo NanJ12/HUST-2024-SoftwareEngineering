@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://belphrtbro6gw"]
+
+[ext_resource type="Texture2D" uid="uid://dir4xaqhgm1ng" path="res://assets/tile/陷阱.png" id="2_v748g"]
+[ext_resource type="Script" path="res://resource/organs/intermittent_organ/vertical_platform_organ.gd" id="3_bw0cd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrqdg"]
+atlas = ExtResource("2_v748g")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq1pv"]
+size = Vector2(48, 20)
+
+[node name="VerticalPlatformOrgan" type="CharacterBody2D"]
+collision_layer = 48
+script = ExtResource("3_bw0cd")
+organ_name = "垂直平台"
+organ_desc = "会进行上下移动的平台"
+organ_texture = SubResource("AtlasTexture_xrqdg")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v748g")
+region_enabled = true
+region_rect = Rect2(96, 96, 48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_cq1pv")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

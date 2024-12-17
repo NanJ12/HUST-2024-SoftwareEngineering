@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://q0r0lspugsbe"]
+
+[ext_resource type="Script" path="res://scripts/models/weather_model.gd" id="1_bjqxa"]
+[ext_resource type="Shader" path="res://shaders/rain.gdshader" id="1_gh2ns"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0hke"]
+shader = ExtResource("1_gh2ns")
+shader_parameter/rain_amount = 500.0
+shader_parameter/near_rain_length = 0.1
+shader_parameter/far_rain_length = 0.05
+shader_parameter/near_rain_width = 0.1
+shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_transparency = 0.5
+shader_parameter/far_rain_transparency = 0.25
+shader_parameter/rain_color = Color(0.569, 0.841, 0.993, 0.62)
+shader_parameter/base_rain_speed = 0.5
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 4.75e-08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exgtu"]
+resource_local_to_scene = true
+shader = ExtResource("1_gh2ns")
+shader_parameter/rain_amount = 200.0
+shader_parameter/near_rain_length = 0.01
+shader_parameter/far_rain_length = 0.01
+shader_parameter/near_rain_width = 1.0
+shader_parameter/far_rain_width = 1.0
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 1.0
+shader_parameter/rain_color = Color(0.835294, 0.835294, 0.835294, 0.772549)
+shader_parameter/base_rain_speed = 0.1
+shader_parameter/additional_rain_speed = 0.25
+shader_parameter/slant = 4.75e-08
+
+[node name="WeatherModel" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_bjqxa")
+
+[node name="Rain" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_t0hke")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Snow" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_exgtu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 45.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

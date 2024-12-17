@@ -1,0 +1,122 @@
+[gd_scene load_steps=17 format=3 uid="uid://dlemtvufcph1e"]
+
+[ext_resource type="Script" path="res://resource/organs/trigger_organ/npc/gray_npc.gd" id="1_tykj1"]
+[ext_resource type="Script" path="res://scripts/tool/deer_polygon.gd" id="2_2p6yr"]
+
+[sub_resource type="Gradient" id="Gradient_iggj5"]
+colors = PackedColorArray(0.266667, 0.266667, 0.266667, 1, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x3ddi"]
+gradient = SubResource("Gradient_iggj5")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_6ivbk"]
+offsets = PackedFloat32Array(0.432432, 1)
+colors = PackedColorArray(0.513233, 0.513233, 0.513233, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_niktq"]
+gradient = SubResource("Gradient_6ivbk")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Curve" id="Curve_duoi8"]
+_data = [Vector2(0, 0.500784), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_63fkk"]
+curve = SubResource("Curve_duoi8")
+
+[sub_resource type="Gradient" id="Gradient_ku0ph"]
+offsets = PackedFloat32Array(0.140562, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.80498, 0.726476, 0.46471, 0.305882)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sccbo"]
+gradient = SubResource("Gradient_ku0ph")
+
+[sub_resource type="Curve" id="Curve_8pm0c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.498155, 0.745298), 4.68165, 4.68165, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_cwqwr"]
+curve = SubResource("Curve_8pm0c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xaqg7"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 45.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+damping_max = 30.0
+scale_min = 0.75
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_cwqwr")
+color_ramp = SubResource("GradientTexture1D_sccbo")
+alpha_curve = SubResource("CurveTexture_63fkk")
+
+[sub_resource type="Gradient" id="Gradient_kvuxh"]
+offsets = PackedFloat32Array(0.130112, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2r8pf"]
+gradient = SubResource("Gradient_kvuxh")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jd84q"]
+radius = 168.585
+
+[node name="GrayNPC" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_tykj1")
+
+[node name="Light" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+color = Color(0.266575, 0.266575, 0.266575, 1)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_x3ddi")
+texture_scale = 1.5
+metadata/_edit_lock_ = true
+
+[node name="DeerPolygon" type="Polygon2D" parent="."]
+color = Color(0.266667, 0.266667, 0.266667, 1)
+texture = SubResource("GradientTexture2D_niktq")
+texture_offset = Vector2(64, 64)
+polygon = PackedVector2Array(64, 0, 55.4256, 32, 32, 55.4256, 3.91874e-15, 64, -32, 55.4256, -55.4256, 32, -64, 7.83748e-15, -55.4256, -32, -32, -55.4256, -1.17562e-14, -64, 32, -55.4256, 55.4256, -32)
+script = ExtResource("2_2p6yr")
+polygon_edge = 12
+polygon_length = 64.0
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_xaqg7")
+texture = SubResource("GradientTexture2D_2r8pf")
+lifetime = 0.3
+speed_scale = 0.1
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jd84q")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

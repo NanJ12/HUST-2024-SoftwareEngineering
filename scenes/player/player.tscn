@@ -1,0 +1,215 @@
+[gd_scene load_steps=36 format=3 uid="uid://b8q0w12qbn3yt"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_lb6r1"]
+[ext_resource type="Script" path="res://scripts/tool/deer_polygon.gd" id="1_rms2f"]
+[ext_resource type="Shader" path="res://scenes/player/ray_line.gdshader" id="2_5rx1o"]
+[ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="3_sx8mi"]
+[ext_resource type="Script" path="res://scripts/models/strength_model.gd" id="4_25vnj"]
+[ext_resource type="Script" path="res://scenes/player/states/idle_state.gd" id="4_jwsqe"]
+[ext_resource type="Script" path="res://scripts/models/level_model.gd" id="5_0nwcx"]
+[ext_resource type="Script" path="res://scenes/player/states/move_state.gd" id="5_tk464"]
+[ext_resource type="Script" path="res://scenes/player/states/jump_state.gd" id="6_31byh"]
+[ext_resource type="Script" path="res://scenes/player/states/fall_state.gd" id="7_onphl"]
+[ext_resource type="Script" path="res://scenes/player/states/gliding_state.gd" id="8_wgcj8"]
+[ext_resource type="Script" path="res://scenes/player/states/double_jump_state.gd" id="9_w2plt"]
+[ext_resource type="Script" path="res://scripts/models/health_model.gd" id="10_yvaah"]
+[ext_resource type="Script" path="res://scenes/player/states/adsorption_state.gd" id="11_gu3q1"]
+[ext_resource type="Script" path="res://scenes/player/states/adsorption_jump_state.gd" id="12_pdclf"]
+[ext_resource type="Script" path="res://scenes/player/states/sprint_state.gd" id="13_1c18r"]
+[ext_resource type="Script" path="res://scenes/player/states/dead_state.gd" id="14_8onft"]
+[ext_resource type="Script" path="res://scenes/player/states/hurt_state.gd" id="16_ct8yx"]
+[ext_resource type="Script" path="res://scenes/player/states/fly_state.gd" id="17_qt2db"]
+[ext_resource type="Script" path="res://scenes/player/emo_state.gd" id="19_hschd"]
+
+[sub_resource type="Gradient" id="Gradient_fylev"]
+colors = PackedColorArray(1, 1, 1, 0.784314, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dhde8"]
+gradient = SubResource("Gradient_fylev")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75qd4"]
+render_priority = 0
+shader = ExtResource("2_5rx1o")
+shader_parameter/beams = 2
+shader_parameter/energy = 3.0
+shader_parameter/roughness = 3
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.006
+shader_parameter/outline_thickness = 0.03
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.91, 1, 1, 1)
+shader_parameter/outline_color = Color(0.5, 1, 0.96, 1)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_64h2r"]
+offsets = PackedFloat32Array(0.556604, 1)
+colors = PackedColorArray(0.513233, 0.513233, 0.513233, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kms2b"]
+gradient = SubResource("Gradient_64h2r")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nebt7"]
+radius = 29.1548
+
+[sub_resource type="Curve" id="Curve_13eqn"]
+_data = [Vector2(0, 0.500784), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_63fkk"]
+curve = SubResource("Curve_13eqn")
+
+[sub_resource type="Gradient" id="Gradient_t1rar"]
+offsets = PackedFloat32Array(0.140562, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.80498, 0.726476, 0.46471, 0.305882)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sccbo"]
+gradient = SubResource("Gradient_t1rar")
+
+[sub_resource type="Curve" id="Curve_i1pcs"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.498155, 0.745298), 4.68165, 4.68165, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_cwqwr"]
+curve = SubResource("Curve_i1pcs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_llo0k"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 45.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+damping_max = 30.0
+scale_min = 0.75
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_cwqwr")
+color_ramp = SubResource("GradientTexture1D_sccbo")
+alpha_curve = SubResource("CurveTexture_63fkk")
+
+[sub_resource type="Gradient" id="Gradient_kvuxh"]
+offsets = PackedFloat32Array(0.130112, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wgcmk"]
+gradient = SubResource("Gradient_kvuxh")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 48
+floor_max_angle = 1.48353
+script = ExtResource("1_lb6r1")
+
+[node name="Light" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_dhde8")
+texture_scale = 1.5
+metadata/_edit_lock_ = true
+
+[node name="RayLine2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_75qd4")
+points = PackedVector2Array(0, 0, 78, 0)
+width = 15.0
+default_color = Color(0.793344, 0.169657, 0.535108, 1)
+
+[node name="DeerPolygon" type="Polygon2D" parent="."]
+texture = SubResource("GradientTexture2D_kms2b")
+texture_offset = Vector2(32, 32)
+polygon = PackedVector2Array(32, 0, 27.7128, 16, 16, 27.7128, 1.95937e-15, 32, -16, 27.7128, -27.7128, 16, -32, 3.91874e-15, -27.7128, -16, -16, -27.7128, -5.87811e-15, -32, 16, -27.7128, 27.7128, -16)
+script = ExtResource("1_rms2f")
+polygon_edge = 12
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_nebt7")
+
+[node name="HealthModel" type="Node" parent="."]
+script = ExtResource("10_yvaah")
+max_health = 20.0
+
+[node name="StrengthModel" type="Node" parent="."]
+script = ExtResource("4_25vnj")
+max_strength = 50.0
+
+[node name="LevelModel" type="Node" parent="."]
+script = ExtResource("5_0nwcx")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("init_state")]
+script = ExtResource("3_sx8mi")
+init_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("4_jwsqe")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("5_tk464")
+
+[node name="JumpState" type="Node" parent="StateMachine"]
+script = ExtResource("6_31byh")
+
+[node name="FallState" type="Node" parent="StateMachine"]
+script = ExtResource("7_onphl")
+
+[node name="GlidingState" type="Node" parent="StateMachine"]
+script = ExtResource("8_wgcj8")
+
+[node name="DoubleJumpState" type="Node" parent="StateMachine"]
+script = ExtResource("9_w2plt")
+
+[node name="AdsorptionState" type="Node" parent="StateMachine"]
+script = ExtResource("11_gu3q1")
+
+[node name="AdsorptionJumpState" type="Node" parent="StateMachine"]
+script = ExtResource("12_pdclf")
+
+[node name="SprintState" type="Node" parent="StateMachine"]
+script = ExtResource("13_1c18r")
+
+[node name="DeadState" type="Node" parent="StateMachine"]
+script = ExtResource("14_8onft")
+
+[node name="HurtState" type="Node" parent="StateMachine"]
+script = ExtResource("16_ct8yx")
+
+[node name="FlyState" type="Node" parent="StateMachine"]
+script = ExtResource("17_qt2db")
+
+[node name="EmoState" type="Node" parent="StateMachine"]
+script = ExtResource("19_hschd")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_llo0k")
+texture = SubResource("GradientTexture2D_wgcmk")
+lifetime = 0.3
+speed_scale = 0.1
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 0)
+collision_mask = 48
+
+[connection signal="level_up" from="LevelModel" to="." method="_on_level_model_level_up"]
