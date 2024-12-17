@@ -1,4 +1,4 @@
-# Lumine-Journey-to-the-Light
+# HUST-2024-Software Engineering
 
 该项目使用MIT许可证开源，任何人都可以自由使用和修改代码，但请遵循MIT协议的条款。
 
